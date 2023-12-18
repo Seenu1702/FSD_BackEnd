@@ -3,7 +3,10 @@
 const express = require('express');
 const app = express();
 
-const notes = [
+//midddle ware
+app.use(express.json());
+
+let notes = [
     {
         id: 1,
         content: 'backend using node.js',
@@ -44,6 +47,11 @@ app.get('/api/notes/:id', (request, response) => {
     else{
         response.status(404).json({message: 'id does not exist'});
     }
+});
+
+app.post('/api/notes', (request, response) => {
+    notes = notes.concat(request.body);
+    response.status(201).json({message: "new note added successfully.."});
 });
 
 

@@ -86,7 +86,27 @@ app.put('/api/notes/:id', (request, response) =>{
     {
         response.status(404).json({message: 'id does not exist'});
     }
-})
+});
+
+
+app.patch('/api/notes/:id', (request,response) => {
+    const id = request.params.id;
+
+    const noteToUpdate = request.body;
+
+    const note = notes.find(note => note.id == id);
+
+    notes = notes.map(note => note.id == id ? {...note, ...noteToUpdate} : note);
+
+    if(note)
+    {
+        response.status(200).json({message: 'note patched'});
+    }
+    else
+    {
+        response.status(404).json({message: 'id does not exist'});
+    }
+});
 
 
 const Hostname = '127.0.0.1';

@@ -1,6 +1,7 @@
 //import the http library
 
-const http = require('http');
+const express = require('express');
+const app = express();
 
 const notes = [
     {
@@ -21,15 +22,12 @@ const notes = [
 ]
 
 
-
-//create a simple web server
-
-const app = http.createServer((request, response) =>{
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify(notes));
+app.get('/', (request, response) => {
+    response.send('Hello Wold');
 
 });
+
+
 
 const PORT = 3001;
 //make the server to listen the http requests

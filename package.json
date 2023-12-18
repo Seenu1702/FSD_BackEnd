@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Seenu1702/FSD_BackEnd/issues"
   },
-  "homepage": "https://github.com/Seenu1702/FSD_BackEnd#readme"
+  "homepage": "https://github.com/Seenu1702/FSD_BackEnd#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

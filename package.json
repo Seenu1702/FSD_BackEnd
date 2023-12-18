@@ -1,0 +1,20 @@
+{
+  "name": "mern_fsd_backend",
+  "version": "1.0.0",
+  "description": "backend using nodejs + expressjs + mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Seenu",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seenu1702/FSD_BackEnd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Seenu1702/FSD_BackEnd/issues"
+  },
+  "homepage": "https://github.com/Seenu1702/FSD_BackEnd#readme"
+}

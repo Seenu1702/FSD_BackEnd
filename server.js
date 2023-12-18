@@ -39,7 +39,7 @@ app.get('/api/notes/:id', (request, response) => {
 
     // find the notes with the id
     const note = notes.find(note => note.id == id);
-    console.log(note);
+    // console.log(note);
 
     if(note){
         response.status(200).json(note);
@@ -68,6 +68,25 @@ app.delete('/api/notes/:id', (request, response) => {
         response.status(404).json({message: "id doesn't exist"});
     }
 });
+
+app.put('/api/notes/:id', (request, response) =>{
+    const id = request.params.id;
+
+    const noteToReplace = request.body;
+
+    const note = notes.find(note => note.id == id);
+
+    notes = notes.map(note => note.id == id ? noteToReplace : note);
+
+    if(note)
+    {
+        response.status(200).json({message: 'note replaced'});
+    }
+    else
+    {
+        response.status(404).json({message: 'id does not exist'});
+    }
+})
 
 
 const Hostname = '127.0.0.1';

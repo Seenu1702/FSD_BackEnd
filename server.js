@@ -23,13 +23,18 @@ const notes = [
 
 
 app.get('/', (request, response) => {
-    response.send('Hello Wold');
+    response.send('<h1>Hello World</h1>');
+
+});
+
+app.get('/api/notes', (request, response) => {
+    response.json(notes);
 
 });
 
 
-
+const Hostname = '127.0.0.1';
 const PORT = 3001;
 //make the server to listen the http requests
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running at htpp://${Hostname}:${PORT}`));
 

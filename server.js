@@ -6,6 +6,7 @@ const app = express();
 const mongoose = require('mongoose');
 const config = require('./utils/config');
 const {info, error} = require('./utils/logger');
+const cors = require('cors');
 
 //midddle ware
 app.use(express.json());
@@ -41,6 +42,5 @@ app.get('/api/notes', (request, response) => {
 });
 
 
-//make the server to listen the http requests
-app.listen(config.PORT, () => info(`Server running at htpp://${config.HOSTNAME}:${config.PORT}`));
+module.exports = app;
 
